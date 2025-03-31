@@ -2,16 +2,12 @@ package com.example.demo.entities;
 
 import java.util.List;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.*;
 
 @Entity
 public class Song {
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	int id;
 	String name;
 	String artist;
@@ -19,9 +15,9 @@ public class Song {
 	String link;
 	@ManyToMany
 	List<Playlist> playlists;
-	
 	public Song() {
 		super();
+		// TODO Auto-generated constructor stub
 	}
 	public Song(int id, String name, String artist, String genre, String link, List<Playlist> playlists) {
 		super();
@@ -71,11 +67,7 @@ public class Song {
 	@Override
 	public String toString() {
 		return "Song [id=" + id + ", name=" + name + ", artist=" + artist + ", genre=" + genre + ", link=" + link
-				+ ", playlists=" + playlists + ", getId()=" + getId() + ", getName()=" + getName() + ", getArtist()="
-				+ getArtist() + ", getGenre()=" + getGenre() + ", getLink()=" + getLink() + ", getPlaylists()="
-				+ getPlaylists() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()="
-				+ super.toString() + "]";
+				+ ", playlists=" + "]";
 	}
 	
-
 }

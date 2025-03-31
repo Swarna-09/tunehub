@@ -4,6 +4,8 @@ import java.util.List;
 
 import com.example.demo.entities.Playlist;
 
+import jakarta.transaction.Transactional;
+
 public interface PlaylistService {
 
 	public Playlist addPlaylist(Playlist playlist);

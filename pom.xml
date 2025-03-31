@@ -58,9 +58,9 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
- <groupId>com.razorpay</groupId>
- <artifactId>razorpay-java</artifactId>
- <version>1.4.8</version>
+  <groupId>de.micromata.paypal</groupId>
+  <artifactId>paypal-core</artifactId>
+  <version>0.2</version>
 </dependency>
 	</dependencies>
 

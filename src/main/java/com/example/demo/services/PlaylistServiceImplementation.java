@@ -12,24 +12,25 @@ import com.example.demo.repositories.PlaylistRepository;
 import jakarta.transaction.Transactional;
 
 @Service
-public class PlaylistServiceImplementation implements PlaylistService{
+public class PlaylistServiceImplementation 
+					implements PlaylistService
+{
 	@Autowired
-    PlaylistRepository repo;
-	
-	
+	PlaylistRepository repo;
 	@Override
-	@Transactional
 	public Playlist addPlaylist(Playlist playlist) {
-		
 		return repo.save(playlist);
 		
 	}
+	@Transactional
+	public void deletePlaylist(Iterable<? extends Playlist> playlistId) {
+	    CrudRepository<Playlist, Integer> playlistRepository = null;
+		playlistRepository.deleteAll(playlistId);
+	}
+
 	@Override
 	public List<Playlist> fetchAllPlaylists() {
-		// TODO Auto-generated method stub
 		return repo.findAll();
 	}
-	
-
 
 }

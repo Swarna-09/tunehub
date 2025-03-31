@@ -9,38 +9,35 @@ import com.example.demo.entities.Song;
 import com.example.demo.repositories.SongRepository;
 
 @Service
-public class SongServiceImplementation implements SongService {
+public class SongServiceImplementation 
+							implements SongService{
+
 	@Autowired
-SongRepository repo;
+	SongRepository repo;
 	@Override
 	public void addSong(Song song) {
 		repo.save(song);
-		// TODO Auto-generated method stub
 		
 	}
+
 	@Override
-	public List<Song> fetchAllSongs(){
+	public List<Song> fetchAllSongs() {
 		return repo.findAll();
-		// TODO Auto-generated method stub
-		
 	}
-	@Override
+    @Override
 	public boolean songExists(String name) {
-		Song song=repo.findByName(name);
-		if(song==null) {
+		Song song = repo.findByName(name);
+		if(song ==  null) {
 			return false;
 		}
 		else {
 			return true;
 		}
-		// TODO Auto-generated method stub
 		
 	}
 	@Override
 	public void updateSong(Song song) {
 		repo.save(song);
-		// TODO Auto-generated method stub
-		
 	}
 
 }
